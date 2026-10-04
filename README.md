@@ -1,34 +1,36 @@
 # 🌊 AquaGuardian
-### AI-Powered Urban Freshwater Monitoring, Early Warning & Community Cleanup Platform
 
-> **"Detect → Understand → Prioritize → Act → Verify"**
->
-> A citizen-powered One Health platform transforming crowd-sourced riparian observations into explainable ecological risk intelligence, automated cleanup mobilization, and closed-loop impact verification.
+### AI-Assisted Urban Freshwater Monitoring and Community Cleanup
+
+> **Detect → Understand → Prioritize → Act → Verify**
+
+AquaGuardian is a web platform that helps people report and monitor the condition of urban freshwater streams.
+
+Users can submit observations, photos, and other information about a stream. The platform uses AI to analyze visible signs such as unusual water appearance, waste, foam, and other environmental indicators. These observations can then be used to identify areas that may need attention and support community cleanup activities.
+
+The goal is to connect **citizen observations, AI-assisted analysis, and community action** in one platform, following a One Health approach.
 
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![React](https://img.shields.io/badge/Frontend-React%2018%20%2B%20TypeScript-61DAFB.svg?logo=react&logoColor=black)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v3.4-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Leaflet](https://img.shields.io/badge/Mapping-Leaflet%20GIS-199900.svg?logo=leaflet&logoColor=white)](https://leafletjs.com/)
-[![Zero-Secrets Verified](https://img.shields.io/badge/Security-Zero--Hardcoded--Keys-10b981.svg)](#2-security--zero-secrets-architecture)
-[![Demo Ready](https://img.shields.io/badge/Status-Hackathon%20MVP%20Ready-blue.svg)](#5-5-minute-hackathon-demo-script)
 
 ---
 
-## 📑 Table of Contents
-1. [Project Overview & Problem Statement](#1-project-overview--problem-statement)
-2. [Hackathon Track Alignment](#2-hackathon-track-alignment)
-3. [Core Lifecycle: The 5-Stage Impact Loop](#3-core-lifecycle-the-5-stage-impact-loop)
-4. [System Architecture](#4-system-architecture)
-5. [5-Minute Hackathon Demo Script](#5-5-minute-hackathon-demo-script)
-6. [Key Features](#6-key-features)
-7. [Provider-Agnostic AI & Demo Mode](#7-provider-agnostic-ai--demo-mode)
-8. [Responsible AI & Scientific Integrity](#8-responsible-ai--scientific-integrity)
-9. [Environment Configuration & API Keys](#9-environment-configuration--api-keys)
-10. [Local Quickstart & Execution Commands](#10-local-quickstart--execution-commands)
-11. [Project Structure](#11-project-structure)
-12. [API Reference](#12-api-reference)
-13. [Limitations & Future Roadmap](#13-limitations--future-roadmap)
+## Table of Contents
 
+1. [Project Overview](#1-project-overview)
+2. [Hackathon Track Alignment](#2-hackathon-track-alignment)
+3. [How AquaGuardian Works](#3-how-aquaguardian-works)
+4. [System Architecture](#4-system-architecture)
+5. [Key Features](#5-key-features)
+6. [AI Analysis](#6-ai-analysis)
+7. [Responsible AI and Limitations](#7-responsible-ai-and-limitations)
+8. [Environment Configuration](#8-environment-configuration)
+9. [Local Setup](#9-local-setup)
+10. [Project Structure](#10-project-structure)
+11. [API Reference](#11-api-reference)
+12. [Future Improvements](#12-future-improvements)
 ---
 
 ## 1. Project Overview & Problem Statement
@@ -118,50 +120,7 @@ graph TD
 
 ---
 
-## 5. 5-Minute Hackathon Demo Script
-
-The application is pre-seeded with a complete narrative that can be demonstrated end-to-end in under 5 minutes:
-
-1. **Ecosystem Dashboard**:
-   * Navigate to `http://localhost:5173`.
-   * Review the **Overall Ecosystem Status** cards: 1 Healthy, 1 Watch, 1 At Risk, 1 Cleanup Required, 1 Recently Cleaned.
-   * Notice the active **Demo Mode** indicator banner confirming zero configuration friction.
-2. **Explore Monitored Streams on the Map**:
-   * Inspect the interactive Leaflet map.
-   * See color-coded pins: Cedar Creek (🟢 Healthy), Silver Run (🟡 Watch), Industrial Canal (🔴 At Risk / Hazardous), Mill Creek (🧹 Cleanup Required), Willow Brook (✅ Recently Cleaned).
-   * Notice the dashed amber circles showing **Spatial Pollution Clusters**.
-3. **Inspect Stream Health & Explainable AI**:
-   * Click on **Mill Creek (Reach B)**. The Stream Health Profile opens.
-   * Click **"Explain Risk (AI)"**.
-   * Review the **"Why is this stream at risk?"** modal: decomposes risk into abnormal observation spikes, plastic litter, turbidity, and rainfall runoff with evidence citations and confidence indicators.
-4. **Submit a Guided Citizen Observation**:
-   * Click **"Report Observation"**.
-   * Pick **Mill Creek**, choose a preset photo (*Plastic Debris Snag*), select *Brown / Muddy* water and *Plastic bottles* litter.
-   * Click **Submit & Run AI Assessment**.
-   * Review the instant AI diagnostic output: detected indicators, 82% confidence, and **Human Verification Recommended** badge.
-5. **View Spatial Cluster & Early Warning**:
-   * Open **Alerts & Clusters**.
-   * Observe the cluster engine aggregating 17 corroborating citizen logs within a 1.2 km radius into an active early warning.
-6. **Mobilize Community Action & Cleanup Prioritization**:
-   * Open **Cleanup Hub**.
-   * Review **Saturday Mill Creek Community Stream Action** (Priority Score: 87/100, High Priority).
-   * Note the safety notice: non-hazardous surface plastics are safe for volunteers; chemical hazards are flagged with an authority dispatch warning.
-   * Click **Join Cleanup** (+50 Eco Points).
-7. **AI Visual Differential Verification**:
-   * Click **Verify with AI** on the cleanup card.
-   * The modal loads Before & After photographs.
-   * Click **Run AI Verification**. The visual differential engine confirms a **78% reduction in visible anthropogenic litter**.
-   * Mill Creek's status automatically updates to **Recently Cleaned** and health score rebounds!
-8. **Inspect Closed-Loop Impact Recovery**:
-   * Navigate to **Impact Loop** to view the 5-stage timeline from detection (score 54) to post-cleanup (score 68) to 7-day sustained recovery (score 74).
-9. **Interactive Grounded AI Assistant**:
-   * Click **"Ask AI"** in the top navigation.
-   * Ask *"Why is Mill Creek at risk?"* or *"Where are the highest-priority cleanup zones?"*.
-   * The assistant answers using live application database records with verified evidence citations.
-
----
-
-## 6. Key Features
+## 5. Key Features
 
 ### 🟢 1. Multi-Factor Prototype Stream Health Score
 Rather than presenting a fake laboratory chemical index, AquaGuardian computes a transparent, weighted prototype score ($0 - 100$):
@@ -190,7 +149,7 @@ Examines the interdependent triad between:
 
 ---
 
-## 7. Provider-Agnostic AI & Demo Mode
+## 6. Provider-Agnostic AI & Demo Mode
 
 The system features an abstraction layer in `backend/app/services/ai_service.py`.
 
@@ -206,7 +165,7 @@ If an external API key is absent, invalid, or hits rate limits, AquaGuardian **n
 
 ---
 
-## 8. Responsible AI & Scientific Integrity
+## 7. Responsible AI & Scientific Integrity
 
 AquaGuardian strictly implements responsible AI guidelines:
 1. **AI Supports Human Judgment**: The application explicitly emphasizes that computer vision cannot replace certified laboratory water-quality testing or professional environmental authority assessment.
@@ -220,7 +179,7 @@ AquaGuardian strictly implements responsible AI guidelines:
 
 ---
 
-## 9. Environment Configuration & API Keys
+## 8. Environment Configuration & API Keys
 
 ### Template: `.env.example`
 The repository includes `.env.example` with zero hardcoded credentials:
@@ -257,7 +216,7 @@ API_BASE_URL=http://localhost:8000
 
 ---
 
-## 10. Local Quickstart & Execution Commands
+## 9. Local Quickstart & Execution Commands
 
 ### Prerequisites
 * **Python 3.10+** (Tested on Python 3.14)
@@ -297,7 +256,7 @@ python -m pytest backend/tests -v
 
 ---
 
-## 11. Project Structure
+## 10. Project Structure
 
 ```text
 AquaGuardian/
@@ -370,7 +329,7 @@ AquaGuardian/
 
 ---
 
-## 12. API Reference
+## 11. API Reference
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
@@ -397,7 +356,7 @@ AquaGuardian/
 
 ---
 
-## 13. Limitations & Future Roadmap
+## 12. Limitations & Future Roadmap
 
 ### Current Prototype Limitations
 * **Visual vs. Chemical Screening**: Photographic assessment identifies surface debris, turbidity, and algal films; it cannot replace laboratory chemical testing for dissolved heavy metals or pathogens.
@@ -411,6 +370,3 @@ AquaGuardian/
 4. **Micro-Volunteering PWA**: Offline Progressive Web App with geolocation caching for stream surveys without cellular connectivity.
 
 ---
-
-## 14. License & Open Source
-Developed for hackathon demonstration under the MIT License. Citizen science data models follow Open Geospatial Consortium (OGC) environmental sensing standards.
