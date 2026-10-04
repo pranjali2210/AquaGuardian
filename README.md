@@ -122,15 +122,15 @@ graph TD
 
 ## 5. Key Features
 
-### 🟢 1. Multi-Factor Prototype Stream Health Score
+###  1. Multi-Factor Prototype Stream Health Score
 Rather than presenting a fake laboratory chemical index, AquaGuardian computes a transparent, weighted prototype score ($0 - 100$):
 $$\text{Score} = w_{\text{appearance}} S_{\text{app}} + w_{\text{pollution}} S_{\text{poll}} + w_{\text{biodiversity}} S_{\text{bio}} + w_{\text{habitat}} S_{\text{hab}} + w_{\text{climate}} S_{\text{clim}}$$
 Weights are configurable in `backend/app/services/scoring_service.py`.
 
-### 🚨 2. Spatial & Temporal Clustering Engine
+###  2. Spatial & Temporal Clustering Engine
 Groups observations using the Haversine great-circle distance algorithm within a configurable radius ($1.2\text{ km}$) and time window ($72\text{ hours}$). Corroborated clusters trigger automated early warning alerts.
 
-### 🧹 3. Cleanup Prioritization Index
+###  3. Cleanup Prioritization Index
 Calculated dynamically based on:
 * Debris severity & hazard classification
 * Clustered report volume & persistence over time
@@ -138,10 +138,10 @@ Calculated dynamically based on:
 * Proximity to public recreational greenbelts and parks
 * Riparian ecological sensitivity
 
-### 🔍 4. Visual Differential Verification
+###  4. Visual Differential Verification
 Compares before-and-after imagery to estimate the percentage reduction of surface debris, confirming that physical community effort translated into visible habitat clearing.
 
-### 🌐 5. One Health Insights
+###  5. One Health Insights
 Examines the interdependent triad between:
 * **Freshwater Ecosystem**: Re-aeration, hydraulic snags, turbidity
 * **Riparian Biodiversity**: Sentinel bio-indicators (mayfly/dragonfly nymphs)
